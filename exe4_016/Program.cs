@@ -61,11 +61,38 @@ namespace exe4_016
             }
         }
 
-    }
-    internal class Program
-    {
         static void Main(string[] args)
         {
+            Stack s = new Stack();
+            while (true)
+            {
+                Console.WriteLine();
+                Console.WriteLine("\n **Stack Menu**\n");
+                Console.WriteLine("1. Push");
+                Console.WriteLine("2. Pop");
+                Console.WriteLine("3. Display");
+                Console.WriteLine("4. Exit");
+                Console.WriteLine("\n Enter your choice : ");
+                string input = Console.ReadLine();
+                char ch = Convert.ToChar(input == "" ? "0" : input);
+                switch (ch)
+                {
+                    case '1':
+                        s.push();
+                        break;
+                    case '2':
+                        s.pop();
+                        break;
+                    case '3':
+                        s.display();
+                        break;
+                    case '4':
+                        return ;
+                    default:
+                        Console.WriteLine("\n invalid choice");
+                        break;
+                }
+            }
         }
     }
 }
