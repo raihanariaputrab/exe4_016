@@ -8,13 +8,28 @@ namespace exe4_016
 {
     class Stack
     {
-        private String[] ar = new string[37];
+        private String[] ra = new string[37];
         private int top;
         private int max;
         public Stack()
         {
             top = -1;
-            max = ar.Length;
+            max = ra.Length;
+        }
+
+        public void push()
+        {
+            if (top == max - 1)
+            {
+                Console.WriteLine("Stack Overflow");
+                return;
+            }
+            else
+            {
+                top++;
+                Console.WriteLine("Masukkan Element :");
+                ra[top] = Console.ReadLine();
+            }
         }
     }
     internal class Program
